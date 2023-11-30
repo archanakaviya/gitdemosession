@@ -1,0 +1,6 @@
+from win32com.client import Dispatch
+
+sharepoint_client = Dispatch("Sharepoint.Application")
+sharepoint_client.Connect("https://mysharepointsite.com", username="username", password="password")
+sharepoint_client.UploadFile("C:\myfile.txt", "https://mysharepointsite.com/myfolder/myfile.txt")
+sharepoint_client.Disconnect()
